@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 
@@ -15,6 +16,9 @@ def blog_single(request,pid):
 
 def test(request, pid):
     # posts = Post.objects.get(id=pid)
-    post = get_object_or_404(Post, pk=pid)
+    post = get_object_or_404(Post, pk=pid)                 #انتقال دهنده محتوا بر اساس پرایمری کی
     context = {'post':post}
     return render(request, 'test.html', context)
+
+def test(request):
+    return render(request, 'test.html')
