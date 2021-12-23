@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.base import Model
 
 # Create your models here.
 class Contact(models.Model):
@@ -13,4 +14,10 @@ class Contact(models.Model):
         ordering = ('created_date', )
     def __str__(self):
         return self.name
+
+class NewsLetter(models.Model):
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.email
 
