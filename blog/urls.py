@@ -12,4 +12,5 @@ urlpatterns = [
     path('search/', blog_search, name='search'),
     path('test', test, name='test'),
     
+    
 ]
